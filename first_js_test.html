@@ -1,0 +1,56 @@
+<!-- this is for testing js  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First JS Test</title>
+</head>
+
+<body>
+    <ul id="myList"></ul>
+    <input type="text" id="txtMyInput" name="txtMyInput" placeholder="Enter fruit name" />
+    <input type="button" id="btnAdd" value="Add" onclick="handleClick()" />
+    <script type="text/javascript">
+        var fruits = []
+        function handleClick() {
+
+            console.log('Add button clicked')
+            var inpt = document.getElementById("txtMyInput")
+                .value
+            document.getElementById("txtMyInput")
+                .value = ''
+            fruits.push(inpt)
+            console.log(fruits, fruits.length)
+            var html = '';
+            fruits.forEach(fruit => {
+                html += '<li>' + fruit + '</li>'
+            });
+            document.getElementById('myList').innerHTML
+                = html
+        }
+        /*  //declare variable
+          var a = 10;
+          var b = 20;
+          //  10 + 20 = 30
+          console.log(a, b, (a + b))
+          // string concate
+          console.log(a + "+" + b + "=" + (a + b))
+          // string interpolation
+          console.log(`${a} + ${b} = ${a + b}`)
+          // typeof 
+          console.log(typeof a)
+          // console.log(b)
+          calc();
+          function calc() {
+              console.log('this is from function calc')
+          }
+          calc()*/
+
+
+
+    </script>
+</body>
+
+</html>

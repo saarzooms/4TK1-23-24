@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="txtName" id="txtName" placeholder="Enter your name" /><br />
+    <input type="radio" name="rdoGender" id="rdoFemale" value="f">Female
+    <input type="radio" name="rdoGender" id="rdoMale" value="m">Male<br />
+    <input type="number" name="txtAge" id="txtAge" placeholder="Enter your age" /><br />
+    <button id="btnSubmit" onclick="handleClick()" type="button">Submit</button>
+    <script>
+        function handleClick() {
+            var nm = document.getElementById('txtName').value
+            var age = document.getElementById('txtAge').value
+            var male = document.getElementById('rdoFemale');
+            var female = document.getElementById('rdoMale');
+            if (nm == '')
+                alert('Please Enter your name')
+            else if (age == '')
+                alert('Please Enter your age')
+            else if (!male.checked && !female.checked)
+                alert('Please select your gender')
+        }
+    </script>
+</body>
+
+</html>

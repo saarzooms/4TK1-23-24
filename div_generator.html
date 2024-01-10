@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Generator</title>
+    <style>
+        .evenDiv {
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            background-color: purple;
+            color: white;
+        }
+
+        .oddDiv {
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txtCount" />
+    <button onclick="handleAdd()">Add</button>
+    <div id="mainContainer"></div>
+    <script>
+        function handleAdd() {
+            var count = document.getElementById('txtCount')
+                .value;
+            var html = '';
+
+            for (let index = 0; index < count; index++) {
+                if (index % 2 == 0)
+                    html += '<div class="evenDiv">' + (index + 1) + '</div>'
+                else
+                    html += '<div class="oddDiv">' + (index + 1) + '</div>'
+            }
+            document.getElementById('mainContainer').innerHTML = html;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            height: 200px;
+            width: 150px;
+            background-color: rgb(204, 230, 203);
+            display: inline-block;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .product_title {
+            font-size: 45px;
+            font-weight: bold;
+            color: blueviolet;
+            text-overflow: ellipsis;
+        }
+
+        .product_desc {
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(180, 82, 7);
+        }
+
+        .offer_price {
+            font-size: large;
+            font-weight: 800;
+            color: green;
+            display: inline-block;
+        }
+
+        .actual_price {
+            font-size: large;
+            font-weight: 600;
+            color: red;
+            display: inline-block;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+
+        var fruits = [
+            {
+                'img': 'fruit1',
+                'title': 'Strawberry',
+                'desc': 'Red fruit',
+                'offer_price': '45',
+                'actual_price': '55'
+            }, {
+                'img': 'fruit2',
+                'title': 'Apple',
+                'desc': 'Sweet fruit',
+                'offer_price': '55',
+                'actual_price': '65'
+            }, {
+                'img': 'fruit3',
+                'title': 'Mango',
+                'desc': 'Yellow fruit',
+                'offer_price': '35',
+                'actual_price': '55'
+            }, {
+                'img': 'fruit4',
+                'title': 'WaterMelon',
+                'desc': 'Red  juicy fruit',
+                'offer_price': '45',
+                'actual_price': '55'
+            },
+        ]
+        //  const myfun = (fruit)=> {
+        //     //logic
+        // }
+        // myfun();
+        var html = ''
+        fruits.forEach(fruit => {
+            html += '<div class="card">' +
+                '<img src="images/' + fruit.img + '.jpeg" ' +
+                'height="100px" width="150px" alt="' + fruit.title + '" />' +
+                '<div class="product_title">' + fruit.title + '</div>' +
+                '<div class="product_desc">' + fruit.desc + '</div>' +
+                '<div>' +
+                '<div class="offer_price">₹ ' + fruit.offer_price + '</div>' +
+                '<div class="actual_price">₹ ' + fruit.actual_price + '</div>' +
+                '</div>' +
+                '</div>';
+        });
+        // for (var i = 0; i < fruits.length; i++) {
+        //     html += '<div class="card">' +
+        //         '<img src="images/' + fruits[i].img + '.jpeg" ' +
+        //         'height="100px" width="150px" alt="' + fruits[i].title + '" />' +
+        //         '<div class="product_title">' + fruits[i].title + '</div>' +
+        //         '<div class="product_desc">' + fruits[i].desc + '</div>' +
+        //         '<div>' +
+        //         '<div class="offer_price">₹ ' + fruits[i].offer_price + '</div>' +
+        //         '<div class="actual_price">₹ ' + fruits[i].actual_price + '</div>' +
+        //         '</div>' +
+        //         '</div>';
+        // }
+
+        document.getElementById('container').innerHTML = html;   
+    </script>
+</body>
+
+</html>
