@@ -4,11 +4,16 @@ function setCapacity() {
   capacity = document.getElementById("txtCapacity").value;
   document.getElementById("txtCapacity").value = "0";
   document.getElementById("remaining_output").innerText = capacity - counter;
+  document.getElementById("capacity_container").style.display = "none";
+  document.getElementById("counter_display").style.display = "block";
+
   checkRemaining();
 }
 function inc() {
   if (counter < capacity) {
     counter++;
+    document.getElementById("remaining_output").innerText = capacity - counter;
+    document.getElementById("counter_output").innerText = counter;
   }
   checkRemaining();
 }

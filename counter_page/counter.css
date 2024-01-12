@@ -2,3 +2,6 @@ body{
     /* background-color: purple; */
     color:purple;
 }
+button{
+    border-radius: 10px;
+}
