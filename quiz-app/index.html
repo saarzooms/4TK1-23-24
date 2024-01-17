@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="question" id="labelQuestion">
+        Question text
+    </div>
+    <div class="answer" id="answer">
+    </div>
+    <div class="navigation">
+        <button type="button" id="btnPrev" onclick="onClickPrev()">Prev</button>
+        <button type="button" id="btnCheck" onclick="checkAnswer()">Check Answer</button>
+        <button type="button" id="btnNext" onclick="onClickNext()">Next</button>
+        <button type="button" id="btnCheckResult" onclick="onClickResult()" style="display:none">Check Result</button>
+    </div>
+    <div id="displayresult"></div>
+    <script src="myjs.js"></script>
+</body>
+
+</html>
