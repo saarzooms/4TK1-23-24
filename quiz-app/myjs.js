@@ -23,6 +23,23 @@ var data = [
 var currInd = 0;
 var response = [];
 displayQuiz();
+function onselectquestion(ind) {
+  currInd = ind;
+  displayQuiz();
+}
+function display_question_list() {
+  let list = "<ul>";
+  data[currInd]["answers"].forEach((answer, index) => {
+    list +=
+      '<li onclick="onselectquestion(' +
+      index +
+      ')">Question ' +
+      (index + 1) +
+      "</li>";
+  });
+  list += "</ul>";
+  document.getElementById("display-que-list").innerHTML = list;
+}
 function displayQuiz() {
   document.getElementById("labelQuestion").innerText =
     data[currInd]["question"];
@@ -34,9 +51,12 @@ function displayQuiz() {
       '">' +
       '<input type="radio" name="options" value="' +
       (index + 1) +
-      '">' +
-      answer +
-      "</div>";
+      '"';
+    if (response[currInd] && response[currInd]["res"] == index + 1) {
+      optHtml += ' checked="checked" ';
+    }
+
+    optHtml += ">" + answer + "</div>";
   });
 
   document.getElementById("answer").innerHTML = optHtml;
@@ -53,10 +73,11 @@ function displayQuiz() {
     document.getElementById("btnNext").style.display = "inline";
     document.getElementById("btnCheckResult").style.display = "none";
   }
+  display_question_list();
 }
 function onClickNext() {
-  currInd++;
   checkAnswer();
+  currInd++;
   displayQuiz();
 
   {
@@ -83,6 +104,7 @@ function checkAnswer() {
   }
 }
 function onClickResult() {
+  checkAnswer();
   var html = "";
   response.forEach((resp, index) => {
     html +=

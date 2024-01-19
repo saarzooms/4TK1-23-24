@@ -8,6 +8,20 @@
 </head>
 
 <body>
+    <div id="qus_add">
+        <input type="text" placeholder="Enter question" name="txtQuestion" id="txtQuestion"><br />
+        <input type="text" placeholder="Enter opt1" name="txtOptOne" id="txtOptOne"><br />
+        <input type="text" placeholder="Enter opt2" name="txtOptTwo" id="txtOptTwo"><br />
+        <input type="text" placeholder="Enter opt3" name="txtOptThree" id="txtOptThree"><br />
+        <input type="text" placeholder="Enter opt4" name="txtOptFour" id="txtOptFour"><br />
+        <select name="corrAns" id="corrAns">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+        </select>
+        <input type="button" value="Add" name="btnAdd" id="btnAdd">
+    </div>
     <div class="question" id="labelQuestion">
         Question text
     </div>
@@ -19,6 +33,8 @@
         <button type="button" id="btnNext" onclick="onClickNext()">Next</button>
         <button type="button" id="btnCheckResult" onclick="onClickResult()" style="display:none">Check Result</button>
     </div>
+
+    <div id="display-que-list"></div>
     <div id="displayresult"></div>
     <script src="myjs.js"></script>
 </body>
